@@ -14,10 +14,14 @@ html.app-html.layout-form
     // Import jQuery before materialize.js
     script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(type='text/javascript', src='js/materialize.min.js')
+    // Script for Login Page.
+    script(type='text/javascript', src='js/login.js')
+
     main
       .card-panel.teal.white.auth-form-container
         .row
-          form.col.s12
+          span.error-message
+          form.col.s12#login-form
             .row
               .input-field.col.s8
                 p
@@ -31,6 +35,5 @@ html.app-html.layout-form
               .input-field.col.s12
                 input#password.validate(type='password')
                 label(for='password') Password
-            a.waves-effect.waves-light.btn
-              center Login
+            input(type='submit', value='Login', class='btn btn-login')
             a.waves-effect.waves-light.btn regis
