@@ -1,11 +1,14 @@
-var connection = require('../connection')
+var connection = require('../connection');
 
 function User() {
-    this.get = function(res) {
+    this.get = function(query, callback) {
+        var username = query.username != '' || typeof(query.username) !== 'undefined' ? query.username : '';
+
         connection.acquire(function(err, con) {
-            con.query('select * from owner', function(err, result) {
+            //con.query('select * from owner where username = ?', [username], function(err, result) {
+                con.query('select * from owner', function(err, result) {
                 con.release();
-                res.send(result);
+                callback(result);
             });
         });
     };

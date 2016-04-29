@@ -25,6 +25,7 @@ router.post('/login', function(req,res) {
         if(result) {
            sess = req.session;
            sess.username = username;
+           sess.shopId = 1;
            return res.json({msg: 'done'});
         } else {
           return res.json({error: 'Invalid email or password'});

@@ -9,6 +9,9 @@ var session = require('express-session');
 //Import from routes folder
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var stocks = require('./routes/stocks');
+var customers = require('./routes/customers');
+var orders = require('./routes/orders');
 
 var app = express();
 app.use(bodyparser.urlencoded({extended: true}));
@@ -32,7 +35,10 @@ connection.init();
 //Init Routes
 app.use('/', routes);
 app.use('/users', users);
+app.use('/stocks', stocks);
+app.use('/customers', customers);
+app.use('/orders' , orders);
 
-var server = app.listen(8000, function() {
+var server = app.listen(4000, function() {
     console.log('Server listening on port ' + server.address().port);
 });

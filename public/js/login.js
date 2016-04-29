@@ -7,7 +7,7 @@ $(function() {
 	  // Post to Server
 	  $.ajax({
 	  	type: "POST",
-	  	url: "http://localhost:8000/login",
+	  	url: "http://localhost:4000/login",
 	  	data: JSON.stringify({ 
 	  		username: username,
 	  		password: password 
@@ -27,5 +27,10 @@ $(function() {
 	    	console.log(data);
 	    }
 	  });
+	});
+
+	$("#btn-regis").onClick(function(event){
+		console.log("FUCK");
+		window.location.href = "/register";
 	});
 });
