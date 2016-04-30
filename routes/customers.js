@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-var user = require('../models/user');
+var customer = require('../models/customer');
 
 router.get('/', function(req, res) {
     if(!req.session.username) {
-        return res.redirect('/login');
+         return res.redirect('/login')
     } else {
-    stock.get(req.session.shopId,function(result) {   	
-    	return res.render('stock', {stocks: result});
-    });
+         customer.get(req.session.shopId,function(result){
+         return res.render('customer', {customers: result});
+         });
     }
 });
 

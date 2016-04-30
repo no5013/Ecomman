@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var user = require('../models/user');
+// var stock = require('../models/stock');
+var stock = require('../models/stock');
 
 router.get('/', function(req, res) {
     if(!req.session.username) {
@@ -14,7 +15,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:id', function(req, res) {
-
+	console.log(req.params);
 });
 
 module.exports = router;

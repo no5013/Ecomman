@@ -12,7 +12,7 @@ function User() {
             });
         });
     };
-    
+
     this.authenticate = function(username, password, callback) {
     	connection.acquire(function(err, con) {
             con.query('select username from owner where username = ? and password = ?',
