@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
          return res.redirect('/login')
     } else {
          customer.get(req.session.shopId,function(result){
-         	return res.render('customer', {customers: result});
+         return res.render('customer', {customers: result});
          });
     }
 });
